@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NU Honours 1st Year Exam Routine 2024 - Mathematics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    animation: {
+                        'fade-in': 'fadeIn 0.6s ease-out',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                        'pulse-glow': 'pulseGlow 2s ease-in-out infinite',
+                        'bounce-gentle': 'bounceGentle 2s ease-in-out infinite'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.5); }
+            50% { box-shadow: 0 0 30px rgba(59, 130, 246, 0.8); }
+        }
+        @keyframes bounceGentle {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .dark .gradient-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #312e81 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .dark .card-hover:hover {
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body class="min-h-screen transition-all duration-500 bg-gray-50 dark:bg-gray-900">
+    <!-- Header -->
+    <header class="gradient-bg shadow-lg sticky top-0 z-50 animate-fade-in">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <img src="https://www.anandamohangovtcollege.edu.bd/public/uploads/logo/_%E0%A6%AE%E0%A7%8B%E0%A6%B9%E0%A6%A8_%E0%A6%95%E0%A6%B2%E0%A7%87%E0%A6%9C%E0%A7%87%E0%A6%B0_%E0%A6%B2%E0%A7%8B%E0%A6%97%E0%A7%8B-1725471905.png" 
+                         alt="College Logo" 
+                         class="h-16 w-auto animate-bounce-gentle">
+                    <div class="text-white">
+                        <h1 class="text-xl md:text-2xl font-bold">National University</h1>
+                        <p class="text-sm md:text-base opacity-90">Honours 1st Year Exam Routine 2024</p>
+                        <p class="text-xs md:text-sm opacity-80">Subject: Mathematics</p>
+                    </div>
+                </div>
+                <button id="darkModeToggle" 
+                        class="bg-white/20 hover:bg-white/30 text-white p-3 rounded-full transition-all duration-300 hover:scale-110">
+                    <svg id="sunIcon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                    </svg>
+                    <svg id="moonIcon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Current Time Display -->
+        <div class="text-center mb-8 animate-slide-up">
+            <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 inline-block">
+                <h2 class="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-2">Current Time (BST)</h2>
+                <div id="currentTime" class="text-3xl font-bold text-blue-600 dark:text-blue-400"></div>
+            </div>
+        </div>
+
+        <!-- Exam Cards Grid -->
+        <div class="grid gap-6 md:gap-8">
+            <!-- Exam 1 -->
+            <div class="exam-card bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 card-hover animate-slide-up" style="animation-delay: 0.1s">
+                <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm font-medium">211501</span>
+                            <h3 class="text-xl font-bold text-gray-800 dark:text-white">History Of Bangladesh</h3>
+                        </div>
+                        <div class="flex items-center gap-4 text-gray-600 dark:text-gray-400">
+                            <div class="flex items-center gap-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                                <span>August 24, 2025</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span>1:30 PM</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:text-right">
+                        <div class="countdown-timer bg-gradient-to-r from-blue-500 to-purple-600 text-white p-4 rounded-xl animate-pulse-glow" data-exam-date="2025-08-24T13:30:00">
+                            <div class="text-sm opacity-90 mb-1">Time Remaining</div>
+                            <div class="countdown-display text-lg font-bold"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Exam 2 -->
+            <div class="exam-card bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 card-hover animate-slide-up" style="animation-delay: 0.2s">
+                <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full text-sm font-medium">213701</span>
+                            <h3 class="text-xl font-bold text-gray-800 dark:text-white">Fundamentals of Mathematics</h3>
+                        </div>
+                        <div class="flex items-center gap-4 text-gray-600 dark:text-gray-400">
+                            <div class="flex items-center gap-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                                <span>August 28, 2025</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span>1:30 PM</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:text-right">
+                        <div class="countdown-timer bg-gradient-to-r from-green-500 to-teal-600 text-white p-4 rounded-xl animate-pulse-glow" data-exam-date="2025-08-28T13:30:00">
+                            <div class="text-sm opacity-90 mb-1">Time Remaining</div>
+                            <div class="countdown-display text-lg font-bold"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Exam 3 -->
+            <div class="exam-card bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 card-hover animate-slide-up" style="animation-delay: 0.3s">
+                <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-3 py-1 rounded-full text-sm font-medium">213703</span>
+                            <h3 class="text-xl font-bold text-gray-800 dark:text-white">Calculus - I</h3>
+                        </div>
+                        <div class="flex items-center gap-4 text-gray-600 dark:text-gray-400">
+                            <div class="flex items-center gap-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                                <span>August 31, 2025</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span>1:30 PM</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:text-right">
+                        <div class="countdown-timer bg-gradient-to-r from-purple-500 to-pink-600 text-white p-4 rounded-xl animate-pulse-glow" data-exam-date="2025-08-31T13:30:00">
+                            <div class="text-sm opacity-90 mb-1">Time Remaining</div>
+                            <div class="countdown-display text-lg font-bold"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Exam 4 -->
+            <div class="exam-card bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 card-hover animate-slide-up" style="animation-delay: 0.4s">
+                <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 px-3 py-1 rounded-full text-sm font-medium">213705</span>
+                            <h3 class="text-xl font-bold text-gray-800 dark:text-white">Linear Algebra</h3>
+                        </div>
+                        <div class="flex items-center gap-4 text-gray-600 dark:text-gray-400">
+                            <div class="flex items-center gap-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                                <span>September 3, 2025</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span>1:30 PM</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:text-right">
+                        <div class="countdown-timer bg-gradient-to-r from-red-500 to-orange-600 text-white p-4 rounded-xl animate-pulse-glow" data-exam-date="2025-09-03T13:30:00">
+                            <div class="text-sm opacity-90 mb-1">Time Remaining</div>
+                            <div class="countdown-display text-lg font-bold"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Exam 5 -->
+            <div class="exam-card bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 card-hover animate-slide-up" style="animation-delay: 0.5s">
+                <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 px-3 py-1 rounded-full text-sm font-medium">213707</span>
+                            <h3 class="text-xl font-bold text-gray-800 dark:text-white">Analytic and Vector Geometry</h3>
+                        </div>
+                        <div class="flex items-center gap-4 text-gray-600 dark:text-gray-400">
+                            <div class="flex items-center gap-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                                <span>September 7, 2025</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span>1:30 PM</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:text-right">
+                        <div class="countdown-timer bg-gradient-to-r from-indigo-500 to-blue-600 text-white p-4 rounded-xl animate-pulse-glow" data-exam-date="2025-09-07T13:30:00">
+                            <div class="text-sm opacity-90 mb-1">Time Remaining</div>
+                            <div class="countdown-display text-lg font-bold"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Exam 6 -->
+            <div class="exam-card bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 card-hover animate-slide-up" style="animation-delay: 0.6s">
+                <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 px-3 py-1 rounded-full text-sm font-medium">212707</span>
+                            <h3 class="text-xl font-bold text-gray-800 dark:text-white">Physics-I</h3>
+                        </div>
+                        <div class="flex items-center gap-4 text-gray-600 dark:text-gray-400">
+                            <div class="flex items-center gap-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                                <span>September 14, 2025</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span>1:30 PM</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:text-right">
+                        <div class="countdown-timer bg-gradient-to-r from-yellow-500 to-orange-600 text-white p-4 rounded-xl animate-pulse-glow" data-exam-date="2025-09-14T13:30:00">
+                            <div class="text-sm opacity-90 mb-1">Time Remaining</div>
+                            <div class="countdown-display text-lg font-bold"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Exam 7 -->
+            <div class="exam-card bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 card-hover animate-slide-up" style="animation-delay: 0.7s">
+                <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="bg-teal-100 dark:bg-teal-900 text-teal-800 dark:text-teal-200 px-3 py-1 rounded-full text-sm font-medium">212709</span>
+                            <h3 class="text-xl font-bold text-gray-800 dark:text-white">Physics-II</h3>
+                        </div>
+                        <div class="flex items-center gap-4 text-gray-600 dark:text-gray-400">
+                            <div class="flex items-center gap-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                                <span>September 22, 2025</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" 
