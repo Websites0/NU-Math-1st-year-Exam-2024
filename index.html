@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,297 +13,252 @@
             theme: {
                 extend: {
                     animation: {
-                        'fade-in': 'fadeIn 0.6s ease-out',
-                        'slide-up': 'slideUp 0.8s ease-out',
-                        'pulse-glow': 'pulseGlow 2s ease-in-out infinite',
-                        'bounce-gentle': 'bounceGentle 2s ease-in-out infinite'
+                        'fade-in': 'fadeIn 0.5s ease-in-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' }
+                        }
                     }
                 }
             }
         }
     </script>
     <style>
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        @keyframes slideUp {
-            from { transform: translateY(30px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-        @keyframes pulseGlow {
-            0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.5); }
-            50% { box-shadow: 0 0 30px rgba(59, 130, 246, 0.8); }
-        }
-        @keyframes bounceGentle {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
         .gradient-bg {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
         .dark .gradient-bg {
-            background: linear-gradient(135deg, #1e3a8a 0%, #312e81 100%);
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
         }
-        .card-hover {
-            transition: all 0.3s ease;
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
-        .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-        .dark .card-hover:hover {
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        .dark .glass-effect {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
     </style>
 </head>
-<body class="min-h-screen transition-all duration-500 bg-gray-50 dark:bg-gray-900">
-    <!-- Header -->
-    <header class="gradient-bg shadow-lg sticky top-0 z-50 animate-fade-in">
-        <div class="container mx-auto px-4 py-4">
-            <div class="flex items-center justify-between">
-                <div class="flex items-center space-x-4">
-                    <img src="https://www.anandamohangovtcollege.edu.bd/public/uploads/logo/_%E0%A6%AE%E0%A7%8B%E0%A6%B9%E0%A6%A8_%E0%A6%95%E0%A6%B2%E0%A7%87%E0%A6%9C%E0%A7%87%E0%A6%B0_%E0%A6%B2%E0%A7%8B%E0%A6%97%E0%A7%8B-1725471905.png" 
-                         alt="College Logo" 
-                         class="h-16 w-auto animate-bounce-gentle">
-                    <div class="text-white">
-                        <h1 class="text-xl md:text-2xl font-bold">National University</h1>
-                        <p class="text-sm md:text-base opacity-90">Honours 1st Year Exam Routine 2024</p>
-                        <p class="text-xs md:text-sm opacity-80">Subject: Mathematics</p>
-                    </div>
+<body class="min-h-screen transition-all duration-300 gradient-bg">
+    <div class="container mx-auto px-4 py-6">
+        <!-- Header -->
+        <header class="flex items-center justify-between mb-8 glass-effect rounded-2xl p-6 animate-fade-in">
+            <div class="flex items-center space-x-4">
+                <img src="https://www.anandamohangovtcollege.edu.bd/public/uploads/logo/_%E0%A6%AE%E0%A7%8B%E0%A6%B9%E0%A6%A8_%E0%A6%95%E0%A6%B2%E0%A7%87%E0%A6%9C%E0%A7%87%E0%A6%B0_%E0%A6%B2%E0%A7%8B%E0%A6%97%E0%A7%8B-1725471905.png" 
+                     alt="College Logo" 
+                     class="h-16 w-16 object-contain rounded-lg shadow-lg">
+                <div>
+                    <h1 class="text-2xl md:text-3xl font-bold text-white">National University</h1>
+                    <p class="text-white/80 text-sm md:text-base">Honours 1st Year Exam Routine - 2024</p>
+                    <p class="text-white/70 text-xs md:text-sm">Subject: Mathematics</p>
                 </div>
-                <button id="darkModeToggle" 
-                        class="bg-white/20 hover:bg-white/30 text-white p-3 rounded-full transition-all duration-300 hover:scale-110">
-                    <svg id="sunIcon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
-                    </svg>
-                    <svg id="moonIcon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
-                    </svg>
-                </button>
             </div>
-        </div>
-    </header>
+            
+            <!-- Dark Mode Toggle -->
+            <button id="darkModeToggle" class="p-3 rounded-full glass-effect hover:scale-110 transition-all duration-300">
+                <svg id="sunIcon" class="w-6 h-6 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
+                </svg>
+                <svg id="moonIcon" class="w-6 h-6 text-blue-300 hidden" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                </svg>
+            </button>
+        </header>
 
-    <!-- Main Content -->
-    <main class="container mx-auto px-4 py-8">
         <!-- Current Time Display -->
         <div class="text-center mb-8 animate-slide-up">
-            <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 inline-block">
-                <h2 class="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-2">Current Time (BST)</h2>
-                <div id="currentTime" class="text-3xl font-bold text-blue-600 dark:text-blue-400"></div>
+            <div class="glass-effect rounded-2xl p-6 inline-block">
+                <h2 class="text-white/80 text-lg mb-2">Current Time (Bangladesh)</h2>
+                <div id="currentTime" class="text-3xl md:text-4xl font-bold text-white font-mono"></div>
             </div>
         </div>
 
         <!-- Exam Cards Grid -->
-        <div class="grid gap-6 md:gap-8">
-            <!-- Exam 1 -->
-            <div class="exam-card bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 card-hover animate-slide-up" style="animation-delay: 0.1s">
-                <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
-                    <div class="flex-1">
-                        <div class="flex items-center gap-3 mb-3">
-                            <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm font-medium">211501</span>
-                            <h3 class="text-xl font-bold text-gray-800 dark:text-white">History Of Bangladesh</h3>
-                        </div>
-                        <div class="flex items-center gap-4 text-gray-600 dark:text-gray-400">
-                            <div class="flex items-center gap-2">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                                </svg>
-                                <span>August 24, 2025</span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                </svg>
-                                <span>1:30 PM</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="lg:text-right">
-                        <div class="countdown-timer bg-gradient-to-r from-blue-500 to-purple-600 text-white p-4 rounded-xl animate-pulse-glow" data-exam-date="2025-08-24T13:30:00">
-                            <div class="text-sm opacity-90 mb-1">Time Remaining</div>
-                            <div class="countdown-display text-lg font-bold"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            <!-- Exam cards will be generated by JavaScript -->
+        </div>
 
-            <!-- Exam 2 -->
-            <div class="exam-card bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 card-hover animate-slide-up" style="animation-delay: 0.2s">
-                <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
-                    <div class="flex-1">
-                        <div class="flex items-center gap-3 mb-3">
-                            <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full text-sm font-medium">213701</span>
-                            <h3 class="text-xl font-bold text-gray-800 dark:text-white">Fundamentals of Mathematics</h3>
-                        </div>
-                        <div class="flex items-center gap-4 text-gray-600 dark:text-gray-400">
-                            <div class="flex items-center gap-2">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                                </svg>
-                                <span>August 28, 2025</span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                </svg>
-                                <span>1:30 PM</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="lg:text-right">
-                        <div class="countdown-timer bg-gradient-to-r from-green-500 to-teal-600 text-white p-4 rounded-xl animate-pulse-glow" data-exam-date="2025-08-28T13:30:00">
-                            <div class="text-sm opacity-90 mb-1">Time Remaining</div>
-                            <div class="countdown-display text-lg font-bold"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <!-- Footer -->
+        <footer class="text-center mt-12 text-white/60">
+            <p class="text-sm">©️ 2025 MD Mahfiz Kaif</p>
+        </footer>
+    </div>
 
-            <!-- Exam 3 -->
-            <div class="exam-card bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 card-hover animate-slide-up" style="animation-delay: 0.3s">
-                <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
-                    <div class="flex-1">
-                        <div class="flex items-center gap-3 mb-3">
-                            <span class="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-3 py-1 rounded-full text-sm font-medium">213703</span>
-                            <h3 class="text-xl font-bold text-gray-800 dark:text-white">Calculus - I</h3>
-                        </div>
-                        <div class="flex items-center gap-4 text-gray-600 dark:text-gray-400">
-                            <div class="flex items-center gap-2">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                                </svg>
-                                <span>August 31, 2025</span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                </svg>
-                                <span>1:30 PM</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="lg:text-right">
-                        <div class="countdown-timer bg-gradient-to-r from-purple-500 to-pink-600 text-white p-4 rounded-xl animate-pulse-glow" data-exam-date="2025-08-31T13:30:00">
-                            <div class="text-sm opacity-90 mb-1">Time Remaining</div>
-                            <div class="countdown-display text-lg font-bold"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <script>
+        // Exam data
+        const exams = [
+            { code: '211501', title: 'History Of Bangladesh', dateTime: '2025-08-24T13:30:00' },
+            { code: '213701', title: 'Fundamentals of Mathematics', dateTime: '2025-08-28T13:30:00' },
+            { code: '213703', title: 'Calculus - I', dateTime: '2025-08-31T13:30:00' },
+            { code: '213705', title: 'Linear Algebra', dateTime: '2025-09-03T13:30:00' },
+            { code: '213707', title: 'Analytic and Vector Geometry', dateTime: '2025-09-07T13:30:00' },
+            { code: '212707', title: 'Physics-I', dateTime: '2025-09-14T13:30:00' },
+            { code: '212709', title: 'Physics-II', dateTime: '2025-09-22T13:30:00' },
+            { code: '212807', title: 'Chemistry-I', dateTime: '2025-10-12T13:30:00' }
+        ];
 
-            <!-- Exam 4 -->
-            <div class="exam-card bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 card-hover animate-slide-up" style="animation-delay: 0.4s">
-                <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
-                    <div class="flex-1">
-                        <div class="flex items-center gap-3 mb-3">
-                            <span class="bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 px-3 py-1 rounded-full text-sm font-medium">213705</span>
-                            <h3 class="text-xl font-bold text-gray-800 dark:text-white">Linear Algebra</h3>
-                        </div>
-                        <div class="flex items-center gap-4 text-gray-600 dark:text-gray-400">
-                            <div class="flex items-center gap-2">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                                </svg>
-                                <span>September 3, 2025</span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                </svg>
-                                <span>1:30 PM</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="lg:text-right">
-                        <div class="countdown-timer bg-gradient-to-r from-red-500 to-orange-600 text-white p-4 rounded-xl animate-pulse-glow" data-exam-date="2025-09-03T13:30:00">
-                            <div class="text-sm opacity-90 mb-1">Time Remaining</div>
-                            <div class="countdown-display text-lg font-bold"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        // Dark mode functionality
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const sunIcon = document.getElementById('sunIcon');
+        const moonIcon = document.getElementById('moonIcon');
+        
+        // Check for saved theme preference or default to light mode
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        if (currentTheme === 'dark') {
+            document.documentElement.classList.add('dark');
+            sunIcon.classList.add('hidden');
+            moonIcon.classList.remove('hidden');
+        }
 
-            <!-- Exam 5 -->
-            <div class="exam-card bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 card-hover animate-slide-up" style="animation-delay: 0.5s">
-                <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
-                    <div class="flex-1">
-                        <div class="flex items-center gap-3 mb-3">
-                            <span class="bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 px-3 py-1 rounded-full text-sm font-medium">213707</span>
-                            <h3 class="text-xl font-bold text-gray-800 dark:text-white">Analytic and Vector Geometry</h3>
-                        </div>
-                        <div class="flex items-center gap-4 text-gray-600 dark:text-gray-400">
-                            <div class="flex items-center gap-2">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                                </svg>
-                                <span>September 7, 2025</span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                </svg>
-                                <span>1:30 PM</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="lg:text-right">
-                        <div class="countdown-timer bg-gradient-to-r from-indigo-500 to-blue-600 text-white p-4 rounded-xl animate-pulse-glow" data-exam-date="2025-09-07T13:30:00">
-                            <div class="text-sm opacity-90 mb-1">Time Remaining</div>
-                            <div class="countdown-display text-lg font-bold"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        darkModeToggle.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+            const isDark = document.documentElement.classList.contains('dark');
+            
+            if (isDark) {
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                sunIcon.classList.remove('hidden');
+                moonIcon.classList.add('hidden');
+                localStorage.setItem('theme', 'light');
+            }
+        });
 
-            <!-- Exam 6 -->
-            <div class="exam-card bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 card-hover animate-slide-up" style="animation-delay: 0.6s">
-                <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
-                    <div class="flex-1">
-                        <div class="flex items-center gap-3 mb-3">
-                            <span class="bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 px-3 py-1 rounded-full text-sm font-medium">212707</span>
-                            <h3 class="text-xl font-bold text-gray-800 dark:text-white">Physics-I</h3>
-                        </div>
-                        <div class="flex items-center gap-4 text-gray-600 dark:text-gray-400">
-                            <div class="flex items-center gap-2">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                                </svg>
-                                <span>September 14, 2025</span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                </svg>
-                                <span>1:30 PM</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="lg:text-right">
-                        <div class="countdown-timer bg-gradient-to-r from-yellow-500 to-orange-600 text-white p-4 rounded-xl animate-pulse-glow" data-exam-date="2025-09-14T13:30:00">
-                            <div class="text-sm opacity-90 mb-1">Time Remaining</div>
-                            <div class="countdown-display text-lg font-bold"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        // Current time display (Bangladesh time)
+        function updateCurrentTime() {
+            const now = new Date();
+            const bangladeshTime = new Date(now.toLocaleString("en-US", {timeZone: "Asia/Dhaka"}));
+            
+            const options = {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: true
+            };
+            
+            document.getElementById('currentTime').textContent = bangladeshTime.toLocaleDateString('en-US', options);
+        }
 
-            <!-- Exam 7 -->
-            <div class="exam-card bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 card-hover animate-slide-up" style="animation-delay: 0.7s">
-                <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
-                    <div class="flex-1">
-                        <div class="flex items-center gap-3 mb-3">
-                            <span class="bg-teal-100 dark:bg-teal-900 text-teal-800 dark:text-teal-200 px-3 py-1 rounded-full text-sm font-medium">212709</span>
-                            <h3 class="text-xl font-bold text-gray-800 dark:text-white">Physics-II</h3>
+        // Countdown timer function
+        function getCountdown(examDateTime) {
+            const now = new Date();
+            const bangladeshNow = new Date(now.toLocaleString("en-US", {timeZone: "Asia/Dhaka"}));
+            const examDate = new Date(examDateTime + '+06:00'); // BST timezone
+            const timeDiff = examDate - bangladeshNow;
+
+            if (timeDiff <= 0) {
+                return { expired: true, text: 'Exam Completed' };
+            }
+
+            const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+
+            return {
+                expired: false,
+                days,
+                hours,
+                minutes,
+                seconds,
+                text: `${days}d ${hours}h ${minutes}m ${seconds}s`
+            };
+        }
+
+        // Generate exam cards
+        function generateExamCards() {
+            const container = document.querySelector('.grid');
+            container.innerHTML = '';
+
+            exams.forEach((exam, index) => {
+                const examDate = new Date(exam.dateTime + '+06:00');
+                const formattedDate = examDate.toLocaleDateString('en-US', {
+                    weekday: 'long',
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+                const formattedTime = examDate.toLocaleTimeString('en-US', {
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    hour12: true
+                });
+
+                const card = document.createElement('div');
+                card.className = 'glass-effect rounded-2xl p-6 hover:scale-105 transition-all duration-300 animate-slide-up';
+                card.style.animationDelay = `${index * 0.1}s`;
+
+                card.innerHTML = `
+                    <div class="text-center">
+                        <div class="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-3 py-1 rounded-full text-sm font-semibold mb-4 inline-block">
+                            ${exam.code}
                         </div>
-                        <div class="flex items-center gap-4 text-gray-600 dark:text-gray-400">
-                            <div class="flex items-center gap-2">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                                </svg>
-                                <span>September 22, 2025</span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" 
+                        <h3 class="text-white font-bold text-lg mb-3 leading-tight">${exam.title}</h3>
+                        <div class="text-white/80 text-sm mb-4">
+                            <p class="mb-1">${formattedDate}</p>
+                            <p class="font-semibold">${formattedTime}</p>
+                        </div>
+                        <div class="countdown-${index} bg-white/10 rounded-xl p-4 backdrop-blur-sm">
+                            <div class="text-white font-mono text-lg font-bold countdown-text"></div>
+                            <div class="text-white/70 text-xs mt-1">Time Remaining</div>
+                        </div>
+                    </div>
+                `;
+
+                container.appendChild(card);
+            });
+        }
+
+        // Update all countdowns
+        function updateCountdowns() {
+            exams.forEach((exam, index) => {
+                const countdown = getCountdown(exam.dateTime);
+                const countdownElement = document.querySelector(`.countdown-${index} .countdown-text`);
+                
+                if (countdownElement) {
+                    if (countdown.expired) {
+                        countdownElement.textContent = countdown.text;
+                        countdownElement.parentElement.classList.add('opacity-50');
+                    } else {
+                        countdownElement.textContent = countdown.text;
+                        countdownElement.parentElement.classList.remove('opacity-50');
+                    }
+                }
+            });
+        }
+
+        // Initialize the page
+        function init() {
+            generateExamCards();
+            updateCurrentTime();
+            updateCountdowns();
+            
+            // Update every second
+            setInterval(() => {
+                updateCurrentTime();
+                updateCountdowns();
+            }, 1000);
+        }
+
+        // Start the application
+        init();
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96120a1b45ccd058',t:'MTc1Mjg0MjM0Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
